@@ -1,0 +1,31 @@
+.bubble { z-index: 1; }
+.bubble:hover, .bubble:focus-visible { z-index: 20; }
+.bubble:hover::after, .bubble:focus-visible::after {
+  content: attr(aria-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 280px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: #17231d;
+  color: white;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+  box-shadow: 0 8px 24px #0003;
+  pointer-events: none;
+}
+.bubble:hover::before, .bubble:focus-visible::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 5px);
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: #17231d;
+  pointer-events: none;
+}
